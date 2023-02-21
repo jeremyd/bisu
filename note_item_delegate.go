@@ -105,7 +105,7 @@ func (nid *NoteItemDelegate) Render(w io.Writer, m list.Model, index int, li lis
 	lines := make([]string, 3) // ensure all notes show exactly 3 lines of text, even if they're smaller
 	i := 0
 	for _, line := range strings.Split(
-		wordwrap.String(takeFirstString(event.Content, (m.Width()-2-3)*3), m.Width()-2-3),
+		wordwrap.String(takeFirstString(event.Content, (m.Width()-8)*3), m.Width()-8),
 		"\n",
 	) {
 		line = strings.TrimSpace(line)
